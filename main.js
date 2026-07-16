@@ -18,7 +18,7 @@ photoFiles.forEach(file => {
   item.className = 'gallery-item';
   
   const img = document.createElement('img');
-  img.src = `/photos/${file}`;
+  img.src = `${import.meta.env.BASE_URL}photos/${file}`;
   img.alt = 'Gallery image';
   img.loading = 'lazy';
   
@@ -26,7 +26,7 @@ photoFiles.forEach(file => {
   galleryContainer.appendChild(item);
 
   item.addEventListener('click', () => {
-    openLightbox(`/photos/${file}`);
+    openLightbox(`${import.meta.env.BASE_URL}photos/${file}`);
   });
 });
 
